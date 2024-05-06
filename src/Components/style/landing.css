@@ -1,0 +1,455 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+  /* photo background */
+  background-image: url(https://images.unsplash.com/photo-1619204715997-1367fe5812f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1889&q=80);
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .input-container {
+  position: relative;
+}
+
+/* Add this style to your existing CSS */
+
+.login-box .input-container textarea {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  border-radius: 3px;
+  outline: none;
+  background: transparent;
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 60px; /* Set minimum height */
+}
+
+/* Floating label for textarea */
+.login-box .input-container textarea:focus-within ~ label {
+  top: -25px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+.login-box .input-container textarea ~.filled {
+  top: -25px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+
+.login-box .input-container input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  border-radius: 3px;
+  outline: none;
+  background: transparent;
+}
+
+/* fixes the browser autocomplete css distortion issue  */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
+}
+
+
+.input-container select {
+  position: relative;
+}
+
+/* Add these styles to your existing CSS */
+
+.login-box .input-container select {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  border-radius: 3px;
+  outline: none;
+  background: transparent;
+  /* appearance: none; Remove default arrow */
+  /* -webkit-appearance: none; /*Remove default arrow for Safari */ 
+}
+
+.login-box .input-container select option {
+  background-color: #243b55;
+  color: #fff;
+}
+
+/* Floating label for select */
+.login-box .input-container select:focus-within ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box .input-container label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-box .input-container input:focus-within ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box .input-container .filled {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.CreateCard {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  color: #03e9f4;
+  background: rgba(0, 0, 0, 0);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+.CreateCard:hover {
+  background: #03e9f4;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+}
+
+.login-box .CreateCard span {
+  position: absolute;
+  display: block;
+}
+
+.login-box .CreateCard span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.login-box .CreateCard span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.login-box .CreateCard span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.login-box .CreateCard span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.section-container {
+  width: calc(50% - 10px);
+}
+
+.section-container h3 {
+  color: #fff;
+  margin-top: 0;
+  margin-left: 15px;
+}
+
+.Interests,
+.Socials {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.Interests {
+  margin-bottom: 20px;
+}
+
+.Socials {
+  borders-color: 1px #fff;
+  margin-top: 50px;
+}
+
+.Interests .input-container label,
+.Socials .input-container label {
+  font-size:14px;
+}
+
+.SocialLabel {
+  position: relative;
+  top: 10px;
+  left: 12px;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: justify;
+  cursor: text;
+}
+
+.section-container .input-container  label{
+font-size: 11.5px;
+}
+.SocialLabel:hover,
+h3:hover,
+h2:hover,
+h1:hover {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #03e9f4, 0 0 20px #03e9f4, 0 0 30px #03e9f4;
+  }
+  to {
+    text-shadow: 0 0 20px #03e9f4, 0 0 30px #03e9f4, 0 0 40px #03e9f4;
+  }
+}
+
+
+
+
+.form-button-wrapper {
+  display: flex;
+  justify-content: space-between; /* or any other flex properties you want */
+}
+
+.form-button-wrapper .CreateCard{
+margin-left: 20px;
+}
+
+.PreviewCard {
+  position: relative;
+  display: inline-block;
+  padding: 10px 0px;
+  left: -10px;
+  margin-right: 20px;
+  color: #ec03f4;
+  background: rgba(0, 0, 0, 0);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+.PreviewCard:hover {
+  background: #ec03f4;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ec03f4, 0 0 25px #ec03f4, 0 0 50px #ec03f4,
+    0 0 100px #ec03f4;
+}
+
+.login-box .PreviewCard span {
+  position: absolute;
+  display: block;
+}
+
+.login-box .PreviewCard span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ec03f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.login-box .PreviewCard span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ec03f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.login-box .PreviewCard span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #ec03f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.login-box .PreviewCard span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #ec03f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
